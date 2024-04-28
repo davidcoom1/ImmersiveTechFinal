@@ -6,6 +6,8 @@ TagManager:
   tags:
   - CinemachineTarget
   - Anchor
+  - PlayerHand
+  - VRHand
   layers:
   - Default
   - TransparentFX

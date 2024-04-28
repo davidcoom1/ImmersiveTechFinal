@@ -10,6 +10,7 @@ public class FPSGrab : MonoBehaviour
     [HideInInspector] public PlayerInteractions playerInteractions;
 
 
+
     private void OnCollisionEnter(Collision collision)
     {
         if (pickedUp)
