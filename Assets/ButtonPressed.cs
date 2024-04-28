@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ButtonPress : MonoBehaviour
@@ -8,6 +7,9 @@ public class ButtonPress : MonoBehaviour
     public DoorController doorController; // Drag your DoorController script here.
     public Vector3 pressedPosition; // Local position when button is pressed.
     public float pressDuration = 0.25f; // How long it takes for the button to move to the pressed position.
+    public Transform leftHandTransform; // Assign the left VR hand transform in the inspector.
+    public Transform rightHandTransform; // Assign the right VR hand transform in the inspector.
+    public float activationDistance = 0.1f; // Activation distance from the button.
 
     private Vector3 originalPosition; // To store the original position of the button.
     private bool isPressed = false;
@@ -17,9 +19,19 @@ public class ButtonPress : MonoBehaviour
         originalPosition = transform.localPosition; // Store the original local position of the button.
     }
 
+    void Update()
+    {
+        // Check distance from both hands to the button.
+        if (!isPressed && (Vector3.Distance(leftHandTransform.position, transform.position) < activationDistance ||
+                           Vector3.Distance(rightHandTransform.position, transform.position) < activationDistance))
+        {
+            OnTriggerEnter(null); // Simulate an OnTriggerEnter call.
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("VRHand") && !isPressed) // Make sure your VR hand is tagged appropriately.
+        if ((other?.CompareTag("VRHand") == true || other == null) && !isPressed) // Trigger on proximity or actual collision
         {
             isPressed = true;
             StartCoroutine(MoveButton(pressedPosition, pressDuration, () => {
@@ -46,5 +58,6 @@ public class ButtonPress : MonoBehaviour
         // Wait for the door to open and then reset the button
         yield return new WaitForSeconds(doorController.OpenDuration);
         StartCoroutine(MoveButton(originalPosition, pressDuration, null));
+        isPressed = false; // Reset the pressed state
     }
 }
