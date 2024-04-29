@@ -8,6 +8,7 @@ TagManager:
   - Anchor
   - PlayerHand
   - VRHand
+  - UraniumRod
   layers:
   - Default
   - TransparentFX
