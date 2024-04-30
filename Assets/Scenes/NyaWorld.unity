@@ -1131,6 +1131,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7443583007097417289, guid: b52c268893c724eabb2b2d9d5456b18c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 570368361}
+    - targetCorrespondingSourceObject: {fileID: 7443583007097417289, guid: b52c268893c724eabb2b2d9d5456b18c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 570368366}
   m_SourcePrefab: {fileID: 100100000, guid: b52c268893c724eabb2b2d9d5456b18c, type: 3}
 --- !u!1 &139978943 stripped
 GameObject:
@@ -1343,7 +1346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 158210049}
-  openPosition: {x: -25.372, y: 12.616, z: 33.473}
+  openPosition: {x: 0, y: 12.616, z: 0}
   openSpeed: 1
 --- !u!4 &158927123 stripped
 Transform:
@@ -1436,6 +1439,7 @@ GameObject:
   - component: {fileID: 168894753}
   - component: {fileID: 168894756}
   - component: {fileID: 168894757}
+  - component: {fileID: 168894758}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1571,6 +1575,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &168894758
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168894751}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -0.00000071525574, z: 0.0000038146973}
 --- !u!4 &174294407 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 299294474322597540, guid: 819c758ec1d154be9ac76b7394611c48, type: 3}
@@ -4943,8 +4968,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.5476196, y: 2.765204, z: 0.9712223}
-  m_Center: {x: 0.1481511, y: -0.034794733, z: 0.013201597}
+  m_Size: {x: 2.5476196, y: 2.765204, z: 0.43203336}
+  m_Center: {x: 0.1481511, y: -0.034794733, z: 0.2827955}
 --- !u!114 &570368361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4959,6 +4984,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorController: {fileID: 158210053}
   requiredRods: 5
+--- !u!65 &570368366
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570368356}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.8038454, y: 2.8038461, z: 0.99763197}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &572288953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7569,7 +7615,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.08
-  m_Height: 0.52
+  m_Height: 0.43
   m_Direction: 1
   m_Center: {x: 0, y: 0.21, z: 0}
 --- !u!1001 &796336622
@@ -7918,7 +7964,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.06
-  m_Height: 0.46
+  m_Height: 0.37
   m_Direction: 1
   m_Center: {x: 0, y: 0.19, z: 0}
 --- !u!1001 &810588118
@@ -19569,8 +19615,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.26237583, y: 0.8615704, z: 1.888818}
-  m_Center: {x: 0.08239937, y: 0.43078503, z: 0.026248137}
+  m_Size: {x: 0.440495, y: 0.8615704, z: 1.8888185}
+  m_Center: {x: -0.006660223, y: 0.43078503, z: 0.02624817}
 --- !u!1001 &1972304728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20075,7 +20121,7 @@ Transform:
   m_GameObject: {fileID: 2036033392}
   serializedVersion: 2
   m_LocalRotation: {x: -0.70710677, y: -0, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: 1.995, y: 0, z: -1.637}
+  m_LocalPosition: {x: 1.995, y: 0, z: -1.599}
   m_LocalScale: {x: 0.74613255, y: 0.9655377, z: 0.017799128}
   m_ConstrainProportionsScale: 0
   m_Children: []
