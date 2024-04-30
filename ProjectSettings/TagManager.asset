@@ -9,6 +9,7 @@ TagManager:
   - PlayerHand
   - VRHand
   - UraniumRod
+  - BatteryCell
   layers:
   - Default
   - TransparentFX
